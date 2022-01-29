@@ -45,8 +45,26 @@ var citySearch = function(city) {
     document.getElementById("wind").innerHTML = "Wind Speed: " + city.wind_speed;
     
   }
+
+  
+
   userFormEl.addEventListener("submit", formSubmitHandler);
 
   
 
- 
+  var text = "";
+
+  var saveEvent = function() {
+    
+    $(".searchBtn").on("click", function(){
+        
+        var text = $(this).siblings(".city").val();
+        var search = $(this).parent().attr("id")
+        localStorage.setItem(text, search);
+
+    })
+
+    $(".city .searchBtn").val(localStorage.getItem(".city"))
+
+  };
+saveEvent(text);
