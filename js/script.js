@@ -60,11 +60,11 @@ var citySearch = function(city) {
         
         var text = $(this).siblings(".city").val();
         var search = $(this).parent().attr("id")
-        localStorage.setItem(text, search);
+        localStorage.setItem(search, text);
 
     })
 
-    $(".city .searchBtn").val(localStorage.getItem(".city"))
+    $(".city .searchBtn").val(localStorage.getItem("city"))
 
   };
 saveEvent(text);
