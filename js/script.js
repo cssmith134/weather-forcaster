@@ -9,7 +9,8 @@ var temp = document.querySelector("#temp");
 var wind = document.querySelector("#wind");
 var weather = document.querySelector("#weather");
 var humidity = document.querySelector("#humidity")
-
+var iconcode = a.weather[0].icon;
+var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
 var citySearch = function(city) {
     
@@ -31,19 +32,24 @@ var citySearch = function(city) {
       } else {
         alert("please enter a city name");
       }
-      console.log(event);
+      
   };
 
   var displayCity = function(city, searchTerm) {
     cityContainerEl.textContent = "";
-    citySearchTerm.textContent = searchTerm;
+    citySearchTerm.textContent = searchTerm ;
   
+    
+    
+
     
     document.getElementById("description").innerHTML = city.weather[0].description;
     document.getElementById("temp").innerHTML = "Temp: " + city.main.temp + "&deg";
     document.getElementById("humidity").innerHTML = "Humidity: " + city.main.humidity;
     document.getElementById("wind").innerHTML = "Wind Speed: " + city.wind_speed;
-    
+    $('#wicon').attr('src', iconurl);
+
+
   }
 
   
@@ -68,3 +74,5 @@ var citySearch = function(city) {
 
   };
 saveEvent(text);
+
+
