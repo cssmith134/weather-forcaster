@@ -15,8 +15,8 @@
         <span class="navbar-brand mb-0 h1">Weather Dashboard</span>
       </nav>
 
-      <div class="row min-vh-100 no-gutters">
-          <div class="col-12 col-md">
+      <div id="searchBox" class="row min-vh-100 no-gutters">
+          <div id="leftBox" class="col-12 col-md">
             <h1>Search for a city:</h1>
             <form id="user-form" class="search-body">
             <input type="text" class="city" name="city" id="city" autofocus="true">
@@ -24,28 +24,88 @@
             
 
             </form>
+           
         </div>
         <div class="col-12 col-md-8 card" id="weather">
-            <h2 class="subtitle">Showing weather forcast for: <span id="city-search-term"></span></h2>
+            <h2 class="subtitle">Showing weather forecast for: <span id="city-search-term"></span></h2>
             <div id="city-container" class="list-group"></div>
             <div><img id="icon" src="" alt=""/></div>
-            <p id="description"></p>
-             <p id="temp"></p>
-             <p id="wind"></p>
-             <p id="humidity"></p>
-             <p id="uvi"></p>
-         </div>
-               
-        </div>
+            <h3 id="description"></h3>
+             <h3 id="temp"></h3>
+             <h3 id="wind"></h3>
+             <h3 id="humidity"></h3>
+             <h3 id="uvi"></h3>
+             
+             <main class="col-12 col-lg-9 d-flex flex-column">
+                <div class="m-5 row justify-content-around">
+            
+                  <div class="col-12 col-md-6 col-xl-3 mb-3">
+                    <div class="card text-white bg-primary">
+                     
+            <div><img id="icon" src="" alt=""/></div>
+             <p id="temp1"></p>
+             <p id="wind1"></p>
+             <p id="humidity1"></p>
+             
+                        
+                    </div>
+                  </div>
+          
+                <div class="col-12 col-md-6 col-xl-3 mb-3">
+                  <div class="card text-white bg-primary ">
+                   
+                    <div><img id="icon" src="" alt=""/></div>
+             <p id="temp2"></p>
+             <p id="wind2"></p>
+             <p id="humidity2"></p>
+                    
+                  </div>
+                </div>
+          
+                <div class="col-12 col-md-6 col-xl-3 mb-3">
+                    <div class="card text-white bg-primary ">
+                     
+                        <div><img id="icon" src="" alt=""/></div>
+                        <p id="temp3"></p>
+                        <p id="wind3"></p>
+                        <p id="humidity3"></p>
+                        
+                    </div>
+                  </div>
+          
+                <div class="col-12 col-md-6 col-xl-3 mb-3">
+                    <div class="card text-white bg-primary ">
+            <div><img id="icon" src="" alt=""/></div>
+             <p id="temp4"></p>
+             <p id="wind4"></p>
+             <p id="humidity4"></p>
 
-        <div class="component__weather-box">
-            <div class="component__weather-content">
-              <div class="weather-content__overview"></div>
-              <div class="weather-content__temp"></div>
-            </div>
-            <div class="component__forecast-box"></div>
-          </div>
+                    </div>
+                  
+                </div>
 
+                <div class="col-12 col-md-6 col-xl-3 mb-3">
+                    <div class="card text-white bg-primary ">
+                    <div><img id="icon" src="" alt=""/></div>
+             <p id="temp5"></p>
+             <p id="wind5"></p>
+             <p id="humidity5"></p>
+
+                    </div>
+                  
+                </div>
+                </div>
+        
+                    
+                  
+                </div>
+              </div>
+                
+          
+
+        
+
+        
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
