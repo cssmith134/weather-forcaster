@@ -9,8 +9,11 @@ var temp = document.querySelector("#temp");
 var wind = document.querySelector("#wind");
 var weather = document.querySelector("#weather");
 var humidity = document.querySelector("#humidity")
-var iconcode = a.weather[0].icon;
-var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+var uvi = document.querySelector("#uvi");
+var icon = document.querySelector("#icon");
+
+
+
 
 var citySearch = function(city) {
     
@@ -38,27 +41,27 @@ var citySearch = function(city) {
   var displayCity = function(city, searchTerm) {
     cityContainerEl.textContent = "";
     citySearchTerm.textContent = searchTerm ;
-  
-    
-    
+    console.log(city)
 
-    
     document.getElementById("description").innerHTML = city.weather[0].description;
-    document.getElementById("temp").innerHTML = "Temp: " + city.main.temp + "&deg";
-    document.getElementById("humidity").innerHTML = "Humidity: " + city.main.humidity;
-    document.getElementById("wind").innerHTML = "Wind Speed: " + city.wind_speed;
-    $('#wicon').attr('src', iconurl);
-
-
-  }
-
-  
+    document.getElementById("temp").innerHTML = "Temp: " + city.main.temp + "&deg *F";
+    document.getElementById("humidity").innerHTML = "Humidity: " + city.main.humidity + "%";
+    document.getElementById("wind").innerHTML = "Wind Speed: " + city.wind.speed + " MPH";
+    document.getElementById("icon").src = "http://openweathermap.org/img/wn/" + city.weather[0].icon + ".png";
+    //document.getElementById("uvi").innerHTML = city.uvi;
+  };
 
   userFormEl.addEventListener("submit", formSubmitHandler);
 
   
 
-  var text = "";
+
+
+
+
+  var text = {
+    city: [],
+  };
 
   var saveEvent = function() {
     
@@ -74,5 +77,7 @@ var citySearch = function(city) {
 
   };
 saveEvent(text);
+
+
 
 
