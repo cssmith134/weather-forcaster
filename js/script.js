@@ -48,12 +48,10 @@ var citySearch = function(city) {
       
   };
 
-
-
-
   var saveSearch = function (name) {
     var newBtn = document.createElement("button");
     newBtn.textContent = name;
+   
     newBtn.addEventListener("click", function(event) {
       citySearch(event.target.textContent)
     
@@ -74,12 +72,13 @@ var citySearch = function(city) {
     citySearchTerm.textContent = searchTerm ;
     console.log(city)
 
+    document.getElementById("date").innerHTML = city.dt;
     document.getElementById("description").innerHTML = city.weather[0].description;
     document.getElementById("temp").innerHTML = "Temp: " + city.main.temp + "&deg *F";
     document.getElementById("humidity").innerHTML = "Humidity: " + city.main.humidity + "%";
     document.getElementById("wind").innerHTML = "Wind Speed: " + city.wind.speed + " MPH";
     document.getElementById("icon").src = "http://openweathermap.org/img/wn/" + city.weather[0].icon + ".png";
-    document.getElementById("uvi").innerHTML = "UV Index " + city.coord.lat.lon;
+   
   };
 
   var displayCity1 = function(data) {
@@ -92,41 +91,37 @@ var citySearch = function(city) {
 
   var displayCity2 = function(data) {
     
-    document.getElementById("temp2").innerHTML = "Temp: " + data.list[4].main.temp + "&deg *F";
-    document.getElementById("humidity2").innerHTML = "Humidity: " + data.list[4].main.humidity + "%";
-    document.getElementById("wind2").innerHTML = "Wind Speed: " + data.list[4].wind.speed + " MPH";
+    document.getElementById("temp2").innerHTML = "Temp: " + data.list[12].main.temp + "&deg *F";
+    document.getElementById("humidity2").innerHTML = "Humidity: " + data.list[12].main.humidity + "%";
+    document.getElementById("wind2").innerHTML = "Wind Speed: " + data.list[12].wind.speed + " MPH";
     
   };
 
   var displayCity3 = function(data) {
     
-    document.getElementById("temp3").innerHTML = "Temp: " + data.list[12].main.temp + "&deg *F";
-    document.getElementById("humidity3").innerHTML = "Humidity: " + data.list[12].main.humidity + "%";
-    document.getElementById("wind3").innerHTML = "Wind Speed: " + data.list[12].wind.speed + " MPH";
+    document.getElementById("temp3").innerHTML = "Temp: " + data.list[20].main.temp + "&deg *F";
+    document.getElementById("humidity3").innerHTML = "Humidity: " + data.list[20].main.humidity + "%";
+    document.getElementById("wind3").innerHTML = "Wind Speed: " + data.list[20].wind.speed + " MPH";
     
   };
 
   var displayCity4 = function(data) {
     
-    document.getElementById("temp4").innerHTML = "Temp: " + data.list[20].main.temp + "&deg *F";
-    document.getElementById("humidity4").innerHTML = "Humidity: " + data.list[20].main.humidity + "%";
-    document.getElementById("wind4").innerHTML = "Wind Speed: " + data.list[20].wind.speed + " MPH";
+    document.getElementById("temp4").innerHTML = "Temp: " + data.list[28].main.temp + "&deg *F";
+    document.getElementById("humidity4").innerHTML = "Humidity: " + data.list[28].main.humidity + "%";
+    document.getElementById("wind4").innerHTML = "Wind Speed: " + data.list[28].wind.speed + " MPH";
     
   };
 
   var displayCity5 = function(data) {
     
-    document.getElementById("temp5").innerHTML = "Temp: " + data.list[28].main.temp + "&deg *F";
-    document.getElementById("humidity5").innerHTML = "Humidity: " + data.list[28].main.humidity + "%";
-    document.getElementById("wind5").innerHTML = "Wind Speed: " + data.list[28].wind.speed + " MPH";
+    document.getElementById("temp5").innerHTML = "Temp: " + data.list[36].main.temp + "&deg *F";
+    document.getElementById("humidity5").innerHTML = "Humidity: " + data.list[36].main.humidity + "%";
+    document.getElementById("wind5").innerHTML = "Wind Speed: " + data.list[36].wind.speed + " MPH";
     
   };
 
   userFormEl.addEventListener("submit", formSubmitHandler);
-
-  
-
-
 
 var displayForecast = function(city, searchTearm) {
   var apiURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial" + "&appid=" + apikey;
@@ -141,27 +136,15 @@ var displayForecast = function(city, searchTearm) {
       displayCity4(data);
       displayCity5(data);
 
-
     })
     
 });
 }
 
-  // var text = {
-  //   city: [],
-  // };
-
   var saveEvent = function() {
     
-    // $(".searchBtn").on("click", function(){
-        
-        // var text = $(this).siblings(".city").val();
-        // var search = $(this).parent().attr("id")
+    
         localStorage.setItem("cities", JSON.stringify(cities));
-
-    // })
-
-    // $(".city .searchBtn").val(localStorage.getItem("city"))
 
   };
 
